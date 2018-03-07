@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+	<!-- 默认根据ref 配置自动装配bean -->
+	<bean id="customer" class="com.jl.spring.model.Customer" >
+		<property name="person" ref="person" />
+	</bean>
+	<!--  根据属性名称自动装配。如果一个bean的名称和其他bean属性的名称是一样的，将会自装配它。 -->
+	<bean id="student" class="com.jl.spring.model.Student" autowire="byName"></bean>
+	<!--  按数据类型自动装配。如果一个bean的数据类型是用其它bean属性的数据类型，兼容并自动装配它。 -->
+	<bean id="teacher" class="com.jl.spring.model.Teacher" autowire="byType"></bean>
+	<!--  在构造函数参数的byType方式。  -->
+	<bean id="teacher_constructor" class="com.jl.spring.model.Teacher" autowire="constructor"></bean>
+	<!--  在构造函数参数的byType方式。  -->
+	<bean id="teacher_autodetect" class="com.jl.spring.model.Teacher" autowire="autodetect"></bean>
+	<bean id="person" class="com.jl.spring.model.Person">
+		<property name="name" value="Nicole"></property>
+		<property name="sex" value="girl"></property>
+		<property name="age" value="20"></property>
+	</bean>
+</beans>
