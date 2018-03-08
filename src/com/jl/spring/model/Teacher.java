@@ -1,9 +1,11 @@
 package com.jl.spring.model;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 
 public class Teacher {
 	@Autowired
+	@Qualifier("person") //解决有两个类似的 bean 在 bean 配置文件中声明。
 	public Person personByType;
 	@Autowired(required = false)//禁用spring的 依赖检查
 	public Book book;

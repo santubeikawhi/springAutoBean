@@ -6,6 +6,7 @@ xsi:schemaLocation="http://www.springframework.org/schema/beans
 http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
 http://www.springframework.org/schema/context
 http://www.springframework.org/schema/context/spring-context-2.5.xsd">
+	<!-- 使用  <context:annotation-config /> 方式 实现autowired 自动装配-->
 	<context:annotation-config />
 	<bean id="person" class="com.jl.spring.model.Person">
 		<property name="name" value="Ray"></property>
@@ -13,7 +14,13 @@ http://www.springframework.org/schema/context/spring-context-2.5.xsd">
 		<property name="age" value="26"></property>
 	</bean>
 	
-	<bean id="customer" class="com.jl.spring.model.Customer">
+	<bean id="person2" class="com.jl.spring.model.Person">
+		<property name="name" value="Nicole"></property>
+		<property name="sex" value="woman"></property>
+		<property name="age" value="26"></property>
 	</bean>
+	
+	<bean id="customer" class="com.jl.spring.model.Customer"></bean>
 	<bean id="teacher" class="com.jl.spring.model.Teacher"></bean>
+	<bean id="worker" class="com.jl.spring.model.Worker"></bean>
 </beans>
