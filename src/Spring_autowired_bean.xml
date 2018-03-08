@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+	<!-- 使用AutowiredAnnotationBeanPostProcessor 方式 实现autowired 自动注解 -->
+	<bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor">
+	</bean>
+	<bean id="person" class="com.jl.spring.model.Person">
+		<property name="name" value="Ray"></property>
+		<property name="sex" value="man"></property>
+		<property name="age" value="26"></property>
+	</bean>
+	<bean id="customer" class="com.jl.spring.model.Customer">
+	</bean>
+	<bean id="teacher" class="com.jl.spring.model.Teacher"></bean>
+
+
+</beans>
